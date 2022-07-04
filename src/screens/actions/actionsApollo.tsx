@@ -56,19 +56,19 @@ export const ActionsApollo: React.FC<Props> = ({ id, callback }) => {
     <View style={styles.actionsContainer}>
       <ActionsContainer
         type="Delete"
-        mutation={() => handleDeleteCard()}
+        mutation={handleDeleteCard}
         id={id}
         callback={(state: boolean) => callback(state)}
       />
       <ActionsContainer
         type="Duplicate"
-        mutation={() => handleDuplicateCard()}
+        mutation={handleDuplicateCard}
         id={id}
         callback={(state: boolean) => callback(state)}
       />
       <ActionsContainer
         type="Share"
-        mutation={() => handleShareCard()}
+        mutation={handleShareCard}
         id={id}
         shareResult={shareCardData?.shareCard}
         callback={(state: boolean) => callback(state)}
@@ -79,7 +79,6 @@ export const ActionsApollo: React.FC<Props> = ({ id, callback }) => {
 
 const styles = StyleSheet.create({
   actionsContainer: {
-    // justifyContent: 'flex-end',
     alignItems: 'flex-end',
   },
 });

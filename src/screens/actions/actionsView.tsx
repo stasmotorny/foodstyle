@@ -1,15 +1,22 @@
 import React from 'react';
-import { Pressable, StyleSheet, Text, Image, ImageSourcePropType } from 'react-native';
+import {
+  Pressable,
+  StyleSheet,
+  Text,
+  Image,
+  ImageSourcePropType,
+  GestureResponderEvent,
+} from 'react-native';
 import { colors } from '@src/colors';
 
 interface Props {
-  callback: Function;
+  callback: (event: GestureResponderEvent) => void;
   icon: ImageSourcePropType;
   type: string;
 }
 
 export const ActionsView: React.FC<Props> = ({ callback, type, icon }) => (
-  <Pressable style={styles.cardAction} onPress={() => callback()} testID="pressable">
+  <Pressable style={styles.cardAction} onPress={callback} testID="pressable">
     <Text style={styles.actionText}>{type}</Text>
     <Image source={icon} />
   </Pressable>
