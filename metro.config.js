@@ -14,4 +14,7 @@ module.exports = {
       },
     }),
   },
+  resolver: {
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
+  },
 };

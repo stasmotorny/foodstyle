@@ -1,0 +1,79 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "react-native/react-native": true
+    },
+    "extends": [
+        "airbnb",
+        "airbnb-typescript",
+        "airbnb/hooks",
+        "plugin:react/recommended",
+        "prettier",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 12,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "project": "./tsconfig.json"
+    },
+    "ignorePatterns": ["babel.config.js", "jest.config.js", "metro.config.js", "react-native.config.js", "__tests__/App-test.js"],
+    "plugins": [
+        "@typescript-eslint",
+        "react",
+        "react-native",
+        "prettier"
+    ],
+    "rules": {
+        "react-hooks/exhaustive-deps": "off",
+        "global-require": 0,
+        "react-native/no-unused-styles": 2,
+        "react-native/split-platform-components": 2,
+        "react-native/no-inline-styles": 2,
+        "react-native/no-color-literals": 2,
+        "react-native/no-raw-text": 2,
+        "react/jsx-uses-react": 2,
+        "no-use-before-define": ["error", { "variables": false }],
+        "@typescript-eslint/no-use-before-define": ["error", { "variables": false }],
+        "import/prefer-default-export": "off",
+        "react/jsx-filename-extension": [2, { "extensions": [
+            ".js", ".jsx", ".ts", ".tsx"
+        ] }],
+        "@typescript-eslint/ban-types": ["error",
+            {
+                "types": {
+                    "String": true,
+                    "Boolean": true,
+                    "Number": true,
+                    "Symbol": true,
+                    "{}": true,
+                    "Object": true,
+                    "object": true,
+                    "Function": false
+                },
+                "extendDefaults": true
+            }
+        ],
+        "react/function-component-definition": [
+            2,
+            {
+                "namedComponents": "arrow-function",
+                "unnamedComponents": "arrow-function"
+            }
+        ],
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+                "js": "never",
+                "jsx": "never",
+                "ts": "never",
+                "tsx": "never"
+            }
+        ]
+    }
+}
